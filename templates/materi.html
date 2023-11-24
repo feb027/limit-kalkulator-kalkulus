@@ -1,0 +1,56 @@
+<!-- templates/materi.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    {% include 'navigation.html' %}
+    <div class="content">
+      <h1>Materi Limit</h1>
+
+      <h2>1. Limit</h2>
+      <p>
+      Dalam matematika, konsep limit sangat mendasar. Limit menggambarkan nilai
+      suatu fungsi atau urutan saat input atau indeks mendekati titik tertentu.
+      Ini adalah konsep penting dalam kalkulus dan analisis matematika.
+      </p>
+      <h3>Sifat-sifat Limit </h3>
+      <ul>
+        <img class="enlarge-image" src="{{ url_for('static', filename='sifat_limit.png') }}" alt="Sifat-sifat Limit" width="500" height="400">
+      </ul>
+      
+      <br>
+
+      <h2>2. Limit Fungsi Trigonometri</h2>
+      <p>
+        Limit fungsi trigonometri merupakan nilai terdekat suatu sudut di fungsi trigonometri.
+        Cara menghitungnya mirip seperti limit fungsi aljabar.
+        Perbedaannya yakni fungsi trigonometri wajib diubah terlebih dahulu ke trigonometri agar dapat melihat limit tak tentunya.
+      </p>
+      <h3>Teorema Limit Fungsi Trigonometri</h3>
+      <p>
+        <img class="enlarge-image" src="{{ url_for('static', filename='teorema_trigonometri.png') }}" alt="Teorema Limit Fungsi Trigonometri" width="350" height="550">
+      </p>
+      
+      <br>
+
+      <h2>3. Limit Tak Hingga</h2>
+      <p>
+        Limit tak hingga adalah pendekatan suatu fungsi pada suatu nilai yang besarnya tak terhingga,
+         baik negatif tak terhingga maupun positif tak terhingga.
+      </p>
+      <h3>Sifat Limit Tak Hingga</h3>
+      <p>
+        <img class="enlarge-image" src="{{ url_for('static', filename='sifat_limit_tak_hingga.png') }}" alt="Sifat Limit Tak Hingga" width="400" height="600">
+      </p>
+    </div>
+  </body>
+</html>

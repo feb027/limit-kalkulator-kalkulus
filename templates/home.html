@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang di Grup Kami</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <style>
+        body {
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+            background: #1f2a38;
+            max-width: 1200px;
+        }
+
+        section.intro {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-container {
+            background: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta {
+            background: rgba(44, 62, 80, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        .info-container h2 {
+            font-size: 2.5em;
+            color: #000000;
+        }
+
+        .info-container p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .calculate-btn {
+            background: #6c5ce7;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.4em;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .calculate-btn:hover {
+            background: #8e44ad;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+    <div class="content" id="home-content">
+        <section class="group-info">
+            <div class="info-container">
+                <h2>Selamat datang di Web Kalkulator Limit</h2>
+                <p>Temukan keunikan matematika bersama-sama.</p>
+                <p>Berbagi wawasan, belajar bersama, dan ciptakan ruang pertumbuhan dalam pemahaman matematika.</p>
+                <p>Gunakan kalkulator Limit dan rasakan pengalaman matematika yang menyenangkan!</p>
+            </div>
+        </section>
+
+        <div style="margin-bottom: 50px;"></div>
+
+        <img src="{{ url_for('static', filename='your_gif_file.gif') }}" alt="Your GIF Description" width="500" height="400">
+
+        <section class="cta">
+            <p>Siap untuk memahami dunia limit?</p>
+            <a href="{{ url_for('calculate_limit') }}" class="calculate-btn">Hitung Limit Sekarang</a>
+        </section>
+    </div>
+</body>
+
+</html>

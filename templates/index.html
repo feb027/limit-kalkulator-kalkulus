@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Limit Calculator</title>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{{ url_for('static', filename='styles.css') }}"
+    />
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+    <div class="content">
+        <h1>Kalkulator Limit</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+
+        <form method="POST">
+            <label for="expression"
+                >Masukkan ekspresi (gunakan x, sin(x), cos(x), atau tan(x)):
+            </label>
+            <input type="text" name="expression" required /><br />
+            <label for="lim_x_approaches"
+                >Masukkan nilai x mendekati (misalnya, oo untuk tak hingga atau pi untuk pi):
+            </label>
+            <input type="text" name="lim_x_approaches" required /><br />
+            <input type="submit" value="Hitung Limit" />
+        </form>
+        {% if result %}
+        <p>Hasil limit: {{ result }}</p>
+
+        <img src="{{ url_for('static', filename='your_gif_file2.gif') }}" alt="Your GIF Description" width="300" height="300">
+
+        {% endif %}
+
+        <input type="checkbox" class="help-checkbox" id="helpCheckbox">
+        <label class="help-icon" for="helpCheckbox"></label>
+
+        <div class="instructions-popup">
+          <p>Cara Menggunakan Kalkulator:</p>
+          <p>1. Masukkan ekspresi matematika pada kolom ekspresi.</p>
+          <p>   a. Gunakan simbol matematika standar seperti +, -, *, / untuk penambahan, pengurangan, perkalian, dan pembagian.</p>
+          <p>   b. Gunakan tanda ** untuk operasi eksponensial. Misalnya, x**2 untuk x^2.</p>
+          <p>   c. Gunakan tanda sqrt() atau eksponensial **(1/2) untuk akar kuadrat, contohnya sqrt(x) atau x**(1/2).</p>
+          <p>   d. Gunakan tanda kurung () untuk mengelompokkan operasi matematika. Pastikan untuk menggunakan tanda kurung dengan benar agar urutan operasi matematika sesuai dengan yang diinginkan.</p>
+          <p>   e. Jika Anda menggunakan fungsi matematika khusus, pastikan untuk mengimpor modul yang sesuai dan gunakan sintaks yang benar. Misalnya, untuk fungsi trigonometri, gunakan sin(x), cos(x), tan(x), dst.</p>
+          <p>   f. Jika di dalam ekpresi ada fungsi sin(x), cos(x), atau tan(x) yang berpangkat (**),maka penulisan pangkat (**) ditambahkan di akhir. Contoh sin^2 (x), maka penulisan yang benar adalah sin(x)**2.</p>
+          <p>2. Masukkan nilai x mendekati pada kolom yang disediakan.</p>
+          <p>3. Tekan tombol hitung.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div class="navbar">
+  <ul>
+    {% set active_class = 'active' if request.endpoint == 'calculate_limit' else '' %}
+    <li><a href="{{ url_for('calculate_limit') }}" class="{{ active_class }}">Kalkulator Limit</a></li>
+
+    {% set active_class = 'active' if request.endpoint == 'home' else '' %}
+    <li><a href="{{ url_for('home') }}" class="{{ active_class }}">Home</a></li>
+
+    {% set active_class = 'active' if request.endpoint == 'materi' else '' %}
+    <li><a href="{{ url_for('materi') }}" class="{{ active_class }}">Materi</a></li>
+
+    {% set active_class = 'active' if request.endpoint == 'about' else '' %}
+    <li><a href="{{ url_for('about') }}" class="{{ active_class }}">About</a></li>
+  </ul>
+</div>
