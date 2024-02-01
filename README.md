@@ -8,6 +8,8 @@ Proyek ini merupakan implementasi dari materi kalkulus 1 semester 1 pada Univers
 
 Proyek ini ditulis dalam tiga bahasa pemrograman: Python, HTML, dan CSS.
 
+Menggunakan framework Flask untuk di integrasikan ke web dan menjadi web application
+
 ## Anggota Tim
 
 - Rovi Fauzan (237006022)
